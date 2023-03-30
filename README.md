@@ -4,8 +4,8 @@ It is a simple serverless function and API for a list of coins that are availabl
 
 ## Flow
 
-It is get coin list from DynamoDB firstly, if not exist, get coin list from Coingecko API and save to DynamoDB.
-After that, it is get coin list from DynamoDB and return it. Then, the result is cached in CloudFront.
+It gets coin list from DynamoDB firstly, if not exist, gets coin list from Coingecko API and save to DynamoDB.
+After that, it gets coin list from DynamoDB and return it. Then, the result is cached in CloudFront.
 
 ## Stack
 
