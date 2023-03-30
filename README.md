@@ -26,14 +26,17 @@ Success: (HTTP status code: 200)
 ```json
 {
     "success": true,
-    "coins": [
-        {
-	        "id": "walken",
-			"name": "Walken",
-            "symbol": "wlkn"
-		}
-        ... (omitted)
-    ]
+    "coins": [...]
+}
+```
+
+An example object of coins array:
+
+```json
+{
+   "id": "tezos",
+   "name": "Tezos",
+   "symbol": "xtz"
 }
 ```
 
