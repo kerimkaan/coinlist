@@ -5,13 +5,17 @@ const {
 } = require("@aws-sdk/lib-dynamodb");
 const axios = require("axios");
 
-const region = "eu-central-1";
-const COIN_TABLE = "coins-table-production";
+const region = 'eu-central-1';
+const COIN_TABLE = 'coins-table-production';
 const dynamodb = new DynamoDBClient({ region });
 const docClient = DynamoDBDocumentClient.from(dynamodb);
 
-const COINGECKO_API_URL = "https://api.coingecko.com/api/v3/coins/list";
+const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3/coins/list';
 
+/**
+ * It makes a GET request to the CoinGecko API and returns the data
+ * @returns An array of objects.
+ */
 const getCoinsList = async () => {
 	try {
 		const { data } = await axios.get(COINGECKO_API_URL);
@@ -26,8 +30,8 @@ exports.handler = async (event) => {
 	console.log("EVENT: ", event);
 	try {
 		let result;
-		const params = {
-			TableName: COIN_TABLE,
+        const params = {
+			TableName: COIN_TABLE
 		};
 		// Scan the table to see if there is any data
 		const { Items } = await docClient.send(new ScanCommand(params));
